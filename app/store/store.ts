@@ -52,33 +52,71 @@ type WeatherDay = {
   }[];
 };
 
+type HourlyWeather = {
+  hourly: {
+    fxTime: string;
+    temp: number;
+    icon: number;
+    text: string;
+    wind360: number;
+    windDir: string;
+    windScale: string;
+    windSpeed: number;
+    humidity: number;
+    precip: number;
+    pop: number;
+    pressure: number;
+    cloud: number;
+    dew: number;
+  }[];
+};
+
+type suggestion = {
+  daily: {
+    date: string;
+    type: number;
+    name: string;
+    level: number;
+    category: string;
+    text: string;
+  }[];
+};
+
 interface WeatherState {
-  locationId: number | null;
-  setLocationId: (locationId: number) => void;
-  location: string | null;
-  setLocation: (location: string) => void;
-  weatherNow: WeatherNow | null;
-  setWeatherNow: (weatherNow: WeatherNow) => void;
-  weatherDay: WeatherDay | null;
-  setWeatherDay: (weatherDay: WeatherDay) => void;
-  loadingCurrentWeather: boolean;
-  setLoadingCurrentWeather: (loadingCurrentWeather: boolean) => void;
   error: string | null;
+  loadingCurrentWeather: boolean;
+  location: string | null;
+  locationId: number | null;
+  weatherNow: WeatherNow | null;
+  weatherDay: WeatherDay | null;
+  hourlyWeather: HourlyWeather | null;
+  suggestion: suggestion | null;
+  setLocationId: (locationId: number) => void;
+  setLocation: (location: string) => void;
+  setWeatherNow: (weatherNow: WeatherNow) => void;
+  setWeatherDay: (weatherDay: WeatherDay) => void;
+  setHourlyWeather: (hourlyWeather: HourlyWeather) => void;
+  setSuggestion: (suggestion: suggestion) => void;
+  setLoadingCurrentWeather: (loadingCurrentWeather: boolean) => void;
   setError: (error: string | null) => void;
 }
 
 export const useWeatherStore = create<WeatherState>((set) => ({
-  locationId: null,
-  setLocationId: (locationId: number) => set({ locationId }),
-  location: null,
-  setLocation: (location: string) => set({ location }),
-  weatherNow: null,
-  setWeatherNow: (weatherNow: WeatherNow) => set({ weatherNow }),
-  weatherDay: null,
-  setWeatherDay: (weatherDay: WeatherDay) => set({ weatherDay }),
+  error: null,
   loadingCurrentWeather: false,
+  location: null,
+  locationId: null,
+  weatherNow: null,
+  weatherDay: null,
+  hourlyWeather: null,
+  suggestion: null,
+  setLocationId: (locationId: number) => set({ locationId }),
+  setLocation: (location: string) => set({ location }),
+  setWeatherNow: (weatherNow: WeatherNow) => set({ weatherNow }),
+  setWeatherDay: (weatherDay: WeatherDay) => set({ weatherDay }),
+  setHourlyWeather: (hourlyWeather: HourlyWeather) => set({ hourlyWeather }),
+  setSuggestion: (suggestion: suggestion) => set({ suggestion }),
   setLoadingCurrentWeather: (loadingCurrentWeather: boolean) =>
     set({ loadingCurrentWeather }),
-  error: null,
   setError: (error: string | null) => set({ error }),
 }));

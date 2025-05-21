@@ -22,6 +22,7 @@ export const fetchLocation = async (city: string) => {
     throw error;
   }
 };
+
 // 获取实时天气数据
 export const fetchCurrentWeatherhefeng = async (location: number) => {
   try {
@@ -51,6 +52,47 @@ export const fetchWeatherDay = async (location: number) => {
         params: {
           location: location,
           key: API_KEY,
+        },
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching current weather:", error);
+    throw error;
+  }
+};
+
+// 获取小时天气预报
+export const fetchHourlyWeather = async (location: number) => {
+  try {
+    const response = await axios.get(
+      "https://qj2tumvqwk.re.qweatherapi.com/v7/weather/24h",
+      {
+        params: {
+          location: location,
+          key: API_KEY,
+        },
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching current weather:", error);
+    throw error;
+  }
+};
+
+// 获取实时天气指数
+export const fetchSuggestion = async (location: number) => {
+  try {
+    const response = await axios.get(
+      "https://qj2tumvqwk.re.qweatherapi.com/v7/indices/1d",
+      {
+        params: {
+          location: location,
+          key: API_KEY,
+          type: "0",
         },
       }
     );

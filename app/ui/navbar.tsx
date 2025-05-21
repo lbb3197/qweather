@@ -1,10 +1,9 @@
 "use client";
 import Link from "next/link";
-import { fetchWeatherDay } from "../api/hefeng-weather";
 
 const navItems = [
   { href: "/", label: "今日天气" },
-  { href: "/components/future", label: "未来三日天气" },
+  { href: "/components/hours", label: "逐小时天气" },
   { href: "/components/suggestion", label: "天气指数" },
 ];
 
