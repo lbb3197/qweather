@@ -5,9 +5,11 @@ import HoursCard from "../../ui/Card/hoursCard";
 
 const Hours = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar />
-      <HoursCard />
+      <div className="max-w-4xl mx-auto">
+        <HoursCard />
+      </div>
     </div>
   );
 };

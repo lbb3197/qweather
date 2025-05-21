@@ -6,11 +6,13 @@ import DayCard from "./ui/Card/dayCard";
 
 const Home = () => {
   return (
-    <>
+    <div className="min-h-screen">
       <Navbar />
-      <NowCard />
-      <DayCard />
-    </>
+      <div className="max-w-4xl mx-auto">
+        <NowCard />
+        <DayCard />
+      </div>
+    </div>
   );
 };
 

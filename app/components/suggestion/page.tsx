@@ -5,9 +5,11 @@ import SuggestionCard from "../../ui/Card/suggestionCard";
 
 const Suggestion = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar />
-      <SuggestionCard />
+      <div className="max-w-4xl mx-auto">
+        <SuggestionCard />
+      </div>
     </div>
   );
 };
