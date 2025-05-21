@@ -44,8 +44,8 @@ export const fetchWeatherNow = async (location: string) => {
     //天气指数
     const suggestion = await fetchSuggestion(data.location[0].id);
     setSuggestion(suggestion);
-  } catch (error: any) {
-    setError(error?.message || "无法获取天气数据"); // 设置错误信息
+  } catch (error: unknown) {
+    setError(error instanceof Error ? error.message : "无法获取天气数据"); // 设置错误信息
   } finally {
     setLoadingCurrentWeather(false); // 停止加载
   }
