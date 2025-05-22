@@ -14,6 +14,7 @@
     "qweather-icons": "^1.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "use-debounce": "^10.0.4",
     "zustand": "^5.0.4"
   },
   "devDependencies": {

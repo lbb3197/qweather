@@ -1,10 +1,6 @@
-import { useWeatherStore } from "../../store/store";
 import "qweather-icons/font/qweather-icons.css";
-import Loading from "../loading";
 
-const HoursCard = () => {
-  const { hourlyWeather, loadingCurrentWeather, location } = useWeatherStore();
-
+export function HoursCard() {
   // 格式化时间
   const formatTime = (dateTimeString: string) => {
     const date = new Date(dateTimeString);
@@ -20,9 +16,9 @@ const HoursCard = () => {
     <div className="mb-8">
       <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          {location ? `${location} 24小时天气预报` : "24小时天气预报"}
+          {/* {location ? `${location} 24小时天气预报` : "24小时天气预报"} */}
         </h2>
-
+        {/* 
         {loadingCurrentWeather && <Loading />}
 
         {!hourlyWeather && !loadingCurrentWeather && (
@@ -75,10 +71,8 @@ const HoursCard = () => {
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
-};
-
-export default HoursCard;
+}

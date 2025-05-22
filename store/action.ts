@@ -4,7 +4,7 @@ import {
   fetchWeatherDay,
   fetchSuggestion,
   fetchHourlyWeather,
-} from "../api/hefeng-weather";
+} from "@/api/hefeng-weather";
 import { useWeatherStore } from "./store";
 
 export const fetchWeatherNow = async (location: string) => {

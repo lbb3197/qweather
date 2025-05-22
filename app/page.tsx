@@ -1,19 +1,17 @@
-"use client";
+import { NowCard } from "./_components/now-card";
+// import { DayCard } from "./_components/day-card";
 
-import Navbar from "./ui/navbar";
-import NowCard from "./ui/Card/nowCard";
-import DayCard from "./ui/Card/dayCard";
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { query: string };
+}) {
+  const query = searchParams.query;
 
-const Home = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <div className="max-w-4xl mx-auto">
-        <NowCard />
-        <DayCard />
-      </div>
-    </div>
+    <>
+      <NowCard query={query} />
+      {/* <DayCard /> */}
+    </>
   );
-};
-
-export default Home;
+}
