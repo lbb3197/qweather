@@ -1,8 +1,8 @@
-import { useWeatherStore } from "../../store/store";
+// import { useWeatherStore } from "@/store/store";
 import "qweather-icons/font/qweather-icons.css";
 
-const DayCard = () => {
-  const { weatherDay } = useWeatherStore();
+export function DayCard() {
+  // const { weatherDay } = useWeatherStore();
 
   // 格式化日期
   const formatDate = (dateString: string) => {
@@ -18,14 +18,14 @@ const DayCard = () => {
     <div className="bg-white rounded-xl shadow-lg p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">未来三日天气</h2>
 
-      {!weatherDay && (
+      {/* {!weatherDay && (
         <div className="text-center py-10 text-gray-500">
           <p>请先查询当前天气以获取预报数据</p>
         </div>
-      )}
+      )} */}
 
       <div className="space-y-6">
-        {weatherDay &&
+        {/* {weatherDay &&
           weatherDay.daily.map((item) => {
             const { month, day, weekday } = formatDate(item.fxDate);
             return (
@@ -130,10 +130,8 @@ const DayCard = () => {
                 </div>
               </div>
             );
-          })}
+          })} */}
       </div>
     </div>
   );
-};
-
-export default DayCard;
+}

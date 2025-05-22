@@ -1,10 +1,6 @@
-import { useWeatherStore } from "../../store/store";
 import "qweather-icons/font/qweather-icons.css";
-import Loading from "../loading";
 
-const SuggestionCard = () => {
-  const { suggestion, loadingCurrentWeather, location } = useWeatherStore();
-
+export function SuggestionCard() {
   // 获取合适的指数背景颜色
   const getIndexColor = (type: number) => {
     const colorMap: Record<string, string> = {
@@ -51,10 +47,10 @@ const SuggestionCard = () => {
     <div className="mb-8">
       <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          {location ? `${location} 生活指数` : "生活指数"}
+          {/* {location ? `${location} 生活指数` : "生活指数"} */}
         </h2>
 
-        {loadingCurrentWeather && <Loading />}
+        {/* {loadingCurrentWeather && <Loading />}
 
         {!suggestion && !loadingCurrentWeather && (
           <div className="text-center py-10 text-gray-500">
@@ -84,10 +80,8 @@ const SuggestionCard = () => {
               </div>
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
-};
-
-export default SuggestionCard;
+}
